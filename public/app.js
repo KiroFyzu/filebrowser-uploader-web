@@ -55,7 +55,7 @@ function buildWhatsAppLink(shareURL) {
     return "";
   }
 
-  const message = `.download ${shareURL}`;
+  const message = `.statushd ${shareURL}`;
   return `https://wa.me/${state.waBot.number}?text=${encodeURIComponent(message)}`;
 }
 
