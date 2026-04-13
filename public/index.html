@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Upload Status WA HD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Upload Media + WA Bot</p>
+        <h1>Upload media dulu, lanjut direct ke WhatsApp Bot.</h1>
+        <p class="subtext">
+          Alur cepat untuk status WA HD: upload media, klik tombol Direct WA Bot, lalu bot akan proses
+          perintah download dari link hasil upload.
+        </p>
+        <ol class="hero-steps">
+          <li>Pilih mode dan upload media kamu.</li>
+          <li>Setelah upload sukses, klik tombol Direct ke WA Bot pada hasil file.</li>
+          <li>Pesan otomatis akan berisi format .download &lt;LINK HASIL UPLOAD&gt;.</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <div class="mode-picker" role="radiogroup" aria-label="Upload mode">
+          <label>
+            <input type="radio" name="mode" value="single" checked />
+            Single
+          </label>
+          <label>
+            <input type="radio" name="mode" value="multi" />
+            Multi
+          </label>
+        </div>
+
+        <div id="dropzone" class="dropzone" tabindex="0">
+          <p class="drop-title">Tarik file ke sini</p>
+          <p class="drop-desc">atau klik untuk pilih file</p>
+          <input id="fileInput" type="file" hidden />
+        </div>
+
+        <div class="toolbar">
+          <button id="clearBtn" type="button" class="ghost">Clear</button>
+          <button id="uploadBtn" type="button" class="primary" disabled>Upload</button>
+        </div>
+
+        <div id="uploadLoader" class="upload-loader" aria-live="polite" hidden>
+          <span class="loader" aria-hidden="true"></span>
+          <span>Sedang upload, jangan tutup website ini...</span>
+        </div>
+
+        <div id="selectedList" class="selected-list"></div>
+        <p id="status" class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel results-panel">
+        <h2>Hasil Upload</h2>
+        <p class="results-hint">Setiap file sukses akan menampilkan tombol Direct ke WA Bot.</p>
+        <div id="resultList" class="result-list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
